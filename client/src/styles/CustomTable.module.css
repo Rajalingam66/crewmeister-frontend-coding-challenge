@@ -1,0 +1,41 @@
+.band {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #ffeedb;
+}
+
+.blank{
+  margin:50px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.invisible{
+  visibility: hidden;
+}
+
+.title {
+  font-weight: bold;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  text-align: center;
+  width: 270px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.cell {
+  text-align: center;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  width: 270px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}

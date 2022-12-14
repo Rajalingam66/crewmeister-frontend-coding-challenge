@@ -1,0 +1,53 @@
+{
+  "name": "absence-manager",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:5000",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.24.0",
+    "history": "^5.3.0",
+    "immutable": "^4.1.0",
+    "primeflex": "^3.2.1",
+    "primeicons": "^6.0.1",
+    "primereact": "^8.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.4.5",
+    "react-scripts": "^4.0.3",
+    "redux": "^4.2.0",
+    "redux-batched-actions": "^0.5.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-immutable": "^4.0.0",
+    "redux-saga": "^1.2.2",
+    "reselect": "^4.1.7",
+    "styled-components": "^5.3.6",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.7",
+    "eslint": "^7.11.0"
+  }
+}
