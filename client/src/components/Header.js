@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Title = styled.h4`
   color: #ff9419;
@@ -23,7 +23,7 @@ const Header = (totalCount) => {
       <Title data-testid="title">Absence Manager</Title>
       <Records>
         <span>Absence count</span>
-        <Count data-testid="totalCount">{totalCount} </Count>{" "}
+        <Count data-testid="totalCount">{totalCount} </Count>{' '}
       </Records>
     </div>
   );
