@@ -20,10 +20,10 @@ const Count = styled.span`
 const Header = (totalCount) => {
   return (
     <div className="flex justify-content-between">
-      <Title>Absence Manager</Title>
+      <Title data-testid="title">Absence Manager</Title>
       <Records>
         <span>Absence count</span>
-        <Count>{totalCount} </Count>{" "}
+        <Count data-testid="totalCount">{totalCount} </Count>{" "}
       </Records>
     </div>
   );
