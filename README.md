@@ -5,7 +5,7 @@
 # 🚀 Crewmeister coding challenge - Frontend (React)
 
 
-# Project Title
+# Absence Manager
 
 Absence Manager is the application to manage sickness and vacations of employees.
 The details will be displayed as a table where we can do the filtering and seeing the details with 10 records per page.
