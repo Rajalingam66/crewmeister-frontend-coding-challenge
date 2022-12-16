@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 const Wrapper = styled.div`
   background: rgba(255, 148, 25, 0.85);
   display: flex;
@@ -8,6 +8,6 @@ const Wrapper = styled.div`
   font-size: 22px;
 `;
 const GlobalHeader = () => {
-return <Wrapper>Crewmeister</Wrapper>
-}
+  return <Wrapper>Crewmeister</Wrapper>;
+};
 export default GlobalHeader;
