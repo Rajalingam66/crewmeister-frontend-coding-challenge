@@ -56,8 +56,14 @@ describe("App component Testing", () => {
   test("Component rendered without any issues", () => {
     const app = screen.getByTestId("app");
     expect(app).toBeInTheDocument();
-    const header = screen.getByText(/Total Count/i);
+    const header = screen.getByText(/Absence Manager/i);
     expect(header).toBeInTheDocument();
+  });
+  test("Test the total count display", () => {
+    const header = screen.getByText(/Absence count/i);
+    expect(header).toBeInTheDocument();
+    const totalCount = screen.getByTestId("totalCount");
+    expect(totalCount).toHaveTextContent("42");
   });
 
   test("Check the column headers rendered", () => {
@@ -183,6 +189,15 @@ describe("App component Testing", () => {
     })[2];
     expect(startDate).toBeInTheDocument();
     await fireEvent.click(startDate);
+    const element = screen.getByPlaceholderText("mm/dd/yyyy");
+    await fireEvent.click(element);
+  });
+  test("Test EndDate Filter ", async () => {
+    const endDate = screen.getAllByLabelText("Filter", {
+      selector: "button",
+    })[3];
+    expect(endDate).toBeInTheDocument();
+    await fireEvent.click(endDate);
     const element = screen.getByPlaceholderText("mm/dd/yyyy");
     await fireEvent.click(element);
   });
