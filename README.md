@@ -4,91 +4,69 @@
 
 # 🚀 Crewmeister coding challenge - Frontend (React)
 
-Hello and thanks in participating in the crewmeister coding challenge. This coding exercise will help us get a better feeling about your coding process.
 
-If you have any questions, we're happy to help you. Reach the devs at challenge@crewmeister.com.
+# Project Title
 
-## Context
+Absence Manager is the application to manage sickness and vacations of employees.
+The details will be displayed as a table where we can do the filtering and seeing the details with 10 records per page.
 
-At Crewmeister we like to work closely with our clients, listening to their demands and developing solutions for their problems. One of the most requested features is a way for company owners to manage sickness and vacations of employees.
+## Tech Stack
 
-We decided to implement this feature for our clients and we are calling it the Absence Manager.
+**Client:** React, Redux, StyledComponent, PrimeReact, axios
 
-## Product Requirements
+**Server:** Node, Express
 
-- [ ] I want to see a list of absences including the names of the employees.
-- [ ] I want to see the first 10 absences, with the ability to paginate.
-- [ ] I want to see a total number of absences.
-- [ ] For each absence I want to see:
-  - [ ] Member name
-  - [ ] Type of absence
-  - [ ] Period
-  - [ ] Member note (when available)
-  - [ ] Status (can be 'Requested', 'Confirmed' or 'Rejected')
-  - [ ] Admitter note (when available)
-- [ ] I want to filter absences by type.
-- [ ] I want to filter absences by date.
-- [ ] I want to see a loading state until the list is available.
-- [ ] I want to see an error state if the list is unavailable.
-- [ ] I want to see an empty state if there are no results.
-- [ ] (Bonus) I can generate an iCal file and import it into outlook.
+**Unit Testing:** React testing library,jest
 
-## Your Mission
 
-Create the React application that satisfies all must-have requirements above, plus any nice-to-have requirements you wish to include.
+## Run Locally
 
-We provided a couple of JSON files with the mock data necessary to implement the screens, you can use the files straight into the frontend or create a small API (bonus), it's your choice.
+Clone the project
 
-You can use any boilerplate/approach you prefer (nextjs, create react app, ...), but try to keep it simple. We encourage you to use your favorite tools and packages to build a solid React application.
+```bash
+  git clone https://github.com/Rajalingam66/crewmeister-frontend-coding-challenge.git
+```
 
-You can assume that you do not have to support legacy browsers. Feel free to use modern features such as **fetch** or **flexbox**.
+Go to the client directory
 
-(bonus) Host the website on the service of your choice (Heroku, AWS, GCloud, ...).
+```bash
+  cd client
+```
 
-Optional: build the project and deploy (ie make it available as a static project) on Github Pages, otherwise please provide detailed instructions on how to start the project locally.
+Install dependencies
 
-## Tech Requirements
+```bash
+  npm install
+```
 
-- React
-- Tests: Jest + react-testing-library / enzyme
-- Code Linter
-- Redux is a plus.
-- Typescript is a plus.
-- CSSinJS is a plus: styled-components, styled-system, ...
+Start the client
 
-## Instructions
+```bash
+  npm run start
+```
 
-- Clone this repo.
-- The challenge is on!
-- Build a performant, clean and well-structured solution.
-- Commit early and often. We want to be able to check your progress.
-- Include a README with instructions on how to run your project.
-- Please complete your working solution within 7 days of receiving this challenge.
-- Whenever you're done please deliver the project following the instructions below.
+Go to the server directory
 
-We'll review your submission as soon as possible. Key-points we're going to review:
+```bash
+  cd api
+```
 
-- Naming (files, functions, components, ...).
-- Tests.
-- Code structure, readability, performance and consistency.
-- function lengths.
-- Commits + commit messages.
-- Clean code.
-- Good documentation and README instructions.
+Install dependencies
 
-An essential part of the challenge is also coming up with your own solutions and making reasonable assumptions about the implementation of the acceptance criteria.
+```bash
+  npm install
+```
 
-## Project delivery instructions
+Start the client
 
-To submit the project for evaluation please follow the steps below:
+```bash
+  npm run start
+```
+## Running Tests
 
-- Create a **public** repo on your personal Github.
-- Add the new repo as a _remote_ on your local repo.
-- Push your code to your new remote repo.
-- Send us the link! The e-mail is: challenge@crewmeister.com
+To run tests, run the following command
 
-## That's it!
+```bash
+  npm run test
+```
 
-Happy coding!
-
-<img src="https://user-images.githubusercontent.com/5693916/30273942-84252588-96fb-11e7-9420-5516b92cb1f7.gif" data-canonical-src="https://user-images.githubusercontent.com/5693916/30273942-84252588-96fb-11e7-9420-5516b92cb1f7.gif" width="150" height="150" />
