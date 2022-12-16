@@ -2,6 +2,7 @@ import "primeicons/primeicons.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.css";
 import "primeflex/primeflex.css";
+import styled from 'styled-components'
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { absenceDetailsSelector } from "../redux/selectors";
 import React, { useState, useEffect } from "react";
@@ -14,9 +15,18 @@ import Header from '../components/Header';
 import { formatDate } from '../utils/helpers';
 import "./App.css";
 
+const GlobalHeader = styled.div`
+background: rgba(255,148,25,0.85);
+display: flex;
+height: 45px;
+color: #ffffff;
+padding: 10px;
+font-size: 22px;
+`; 
+
 const App = () => {
   const dispatch = useDispatch();
-  const absenceData = useSelector(
+  const {absenceDetails , totalCount } =  useSelector(
     (state) => absenceDetailsSelector(state),
     shallowEqual
   );
@@ -24,7 +34,6 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const types = ["vacation", "sickness"];
   const statuses = ["Confirmed", "Requested", "Rejected"];
-// console.log("absenceData",absenceData.absenceDetails);
   useEffect(() => {
     dispatch({ type: "GET_ABSENCE_DETAILS" });
     setLoading(false);
@@ -118,20 +127,21 @@ const App = () => {
   };
 
   return (
-    <div className="datatable-filter-demo" data-testid="app">
+    <div className="datatable" data-testid="app">
+      <GlobalHeader>Crewmeister</GlobalHeader>
       <div className="card">
       
         <DataTable
-          value={absenceData.absenceDetails}
+          value={absenceDetails}
           paginator
-          className="p-datatable-customers"
+          className="p-datatable-absence"
           rows={10}
           dataKey="id"
           filters={filters}
           filterDisplay="menu"
           loading={loading}
           responsiveLayout="scroll"
-          header={Header()}
+          header={Header(totalCount)}
           emptyMessage="No records found."
           data-testid="data-table"
         >
@@ -146,8 +156,8 @@ const App = () => {
             header="Type"
             filterField="type"
             showFilterMatchModes={false}
-            filterMenuStyle={{ width: "14rem" }}
-            style={{ minWidth: "14rem" }}
+            filterMenuStyle={{ width: "10rem" }}
+            style={{ minWidth: "10rem" }}
             body={selectBodyTemplate}
             filter
             filterElement={selectFilterTemplate}
@@ -157,8 +167,8 @@ const App = () => {
             header="Status"
             filterField="status"
             showFilterMatchModes={false}
-            filterMenuStyle={{ width: "14rem" }}
-            style={{ minWidth: "14rem" }}
+            filterMenuStyle={{ width: "10rem" }}
+            style={{ minWidth: "10rem" }}
             body={selectStatusTemplate}
             filter
             filterElement={selectStatusFilterTemplate}
@@ -168,7 +178,7 @@ const App = () => {
             header="Start Date"
             filterField="startDate"
             dataType="date"
-            style={{ minWidth: "10rem" }}
+            style={{ minWidth: "14rem" }}
             body={startDateBodyTemplate}
             filter
             filterElement={dateFilterTemplate}
@@ -178,7 +188,7 @@ const App = () => {
             header="End Date"
             filterField="endDate"
             dataType="date"
-            style={{ minWidth: "10rem" }}
+            style={{ minWidth: "14rem" }}
             body={endDateBodyTemplate}
             filter
             filterElement={dateFilterTemplate}
@@ -187,13 +197,13 @@ const App = () => {
           <Column
             field="memberNote"
             header="Member Note"
-            style={{ minWidth: "12rem" }}
+            style={{ minWidth: "14rem" }}
           />
 
           <Column
             field="admitterNote"
             header="Admitter Note"
-            style={{ minWidth: "12rem" }}
+            style={{ minWidth: "14rem" }}
           />
         </DataTable>
       </div>
