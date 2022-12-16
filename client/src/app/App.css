@@ -10,13 +10,11 @@ html {
 
 body {
   background-color: #ffffff;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
-    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: normal;
   color: #495057;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 0.5em;
   margin-bottom: 50px;
 }
 
@@ -26,7 +24,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 1.5rem 0 1rem 0;
+  margin: 0.5rem 0 0.5rem 0;
   font-family: inherit;
   font-weight: 600;
   line-height: 1.2;
@@ -58,6 +56,7 @@ p {
 
 .card {
   margin-bottom: 2rem;
+  background: #ffffff !important;
 }
 
 input[type="number"] {
@@ -81,51 +80,57 @@ input[type="number"]::-webkit-inner-spin-button {
     background-color: rgba(165, 165, 165, 0.1);
   }
 }
-
-.p-column-filter {
-  width: 100%;
+.p-column-filter-menu {
+  margin-left: 5px;
 }
-
-.datatable-filter-demo .p-paginator .p-paginator-current {
+.datatable .p-paginator .p-paginator-current {
   margin-left: auto;
 }
-.datatable-filter-demo .p-progressbar {
+.datatable .p-progressbar {
   height: 0.5rem;
   background-color: #d8dadc;
 }
-.datatable-filter-demo .p-progressbar .p-progressbar-value {
+.datatable .p-progressbar .p-progressbar-value {
   background-color: #607d8b;
 }
-.datatable-filter-demo .p-datepicker {
+.datatable .p-datepicker {
   min-width: 25rem;
 }
-.datatable-filter-demo .p-datepicker td {
+.datatable .p-datepicker td {
   font-weight: 400;
 }
-.datatable-filter-demo .p-datatable.p-datatable-customers .p-datatable-header {
+.datatable .p-datatable.p-datatable-absence .p-datatable-header {
   padding: 1rem;
   text-align: left;
   font-size: 1.5rem;
 }
-.datatable-filter-demo .p-datatable.p-datatable-customers .p-paginator {
+.datatable .p-datatable.p-datatable-absence .p-paginator {
   padding: 1rem;
 }
-.datatable-filter-demo
-  .p-datatable.p-datatable-customers
+.datatable
+  .p-datatable.p-datatable-absence
   .p-datatable-thead
   > tr
   > th {
   text-align: left;
 }
-.datatable-filter-demo
-  .p-datatable.p-datatable-customers
+.datatable
+  .p-datatable.p-datatable-absence
   .p-datatable-tbody
   > tr
   > td {
   cursor: auto;
 }
-.datatable-filter-demo
-  .p-datatable.p-datatable-customers
+.datatable
+  .p-datatable.p-datatable-absence
   .p-dropdown-label:not(.p-placeholder) {
   text-transform: uppercase;
+}
+.p-datatable .p-datatable-header
+{
+  background:none !important;
+}
+.p-datatable .p-datatable-thead > tr > th
+{
+  background-color: #fff9f2 !important;
 }
