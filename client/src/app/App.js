@@ -156,8 +156,8 @@ const App = () => {
             header="Type"
             filterField="type"
             showFilterMatchModes={false}
-            filterMenuStyle={{ width: "10rem" }}
-            style={{ minWidth: "10rem" }}
+            filterMenuStyle={{ width: "8rem" }}
+            style={{ minWidth: "8rem" }}
             body={selectBodyTemplate}
             filter
             filterElement={selectFilterTemplate}
@@ -167,8 +167,8 @@ const App = () => {
             header="Status"
             filterField="status"
             showFilterMatchModes={false}
-            filterMenuStyle={{ width: "10rem" }}
-            style={{ minWidth: "10rem" }}
+            filterMenuStyle={{ width: "9rem" }}
+            style={{ minWidth: "9rem" }}
             body={selectStatusTemplate}
             filter
             filterElement={selectStatusFilterTemplate}
@@ -178,7 +178,7 @@ const App = () => {
             header="Start Date"
             filterField="startDate"
             dataType="date"
-            style={{ minWidth: "14rem" }}
+            style={{ minWidth: "10rem" }}
             body={startDateBodyTemplate}
             filter
             filterElement={dateFilterTemplate}
@@ -188,7 +188,7 @@ const App = () => {
             header="End Date"
             filterField="endDate"
             dataType="date"
-            style={{ minWidth: "14rem" }}
+            style={{ minWidth: "10rem" }}
             body={endDateBodyTemplate}
             filter
             filterElement={dateFilterTemplate}
@@ -197,13 +197,13 @@ const App = () => {
           <Column
             field="memberNote"
             header="Member Note"
-            style={{ minWidth: "14rem" }}
+            style={{ minWidth: "16rem" }}
           />
 
           <Column
             field="admitterNote"
             header="Admitter Note"
-            style={{ minWidth: "14rem" }}
+            style={{ minWidth: "18rem" }}
           />
         </DataTable>
       </div>
