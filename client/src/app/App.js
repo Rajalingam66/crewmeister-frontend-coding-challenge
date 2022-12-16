@@ -1,19 +1,19 @@
-import "primereact/resources/themes/lara-light-indigo/theme.css";
-import "primereact/resources/primereact.css";
-import "primeflex/primeflex.css";
-import { shallowEqual, useDispatch, useSelector } from "react-redux";
-import { absenceDetailsSelector } from "../redux/selectors";
-import React, { useState, useEffect } from "react";
-import { FilterMatchMode } from "primereact/api";
-import { DataTable } from "primereact/datatable";
-import { Column } from "primereact/column";
-import { Dropdown } from "primereact/dropdown";
-import { Calendar } from "primereact/calendar";
-import Header from "../components/Header";
-import { formatDate } from "../utils/helpers";
-import ErrorBoundary from "../components/ErrorBoundary";
-import GlobalHeader from "../components/GlobalHeader";
-import "./App.css";
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import 'primereact/resources/primereact.css';
+import 'primeflex/primeflex.css';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { absenceDetailsSelector } from '../redux/selectors';
+import React, { useState, useEffect } from 'react';
+import { FilterMatchMode } from 'primereact/api';
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
+import { Dropdown } from 'primereact/dropdown';
+import { Calendar } from 'primereact/calendar';
+import Header from '../components/Header';
+import { formatDate } from '../utils/helpers';
+import ErrorBoundary from '../components/ErrorBoundary';
+import GlobalHeader from '../components/GlobalHeader';
+import './App.css';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -23,10 +23,10 @@ const App = () => {
   );
   const [filters, setFilters] = useState(null);
   const [loading, setLoading] = useState(true);
-  const types = ["vacation", "sickness"];
-  const statuses = ["Confirmed", "Requested", "Rejected"];
+  const types = ['vacation', 'sickness'];
+  const statuses = ['Confirmed', 'Requested', 'Rejected'];
   useEffect(() => {
-    dispatch({ type: "GET_ABSENCE_DETAILS" });
+    dispatch({ type: 'GET_ABSENCE_DETAILS' });
     setLoading(false);
     initFilters();
   }, []);
@@ -36,7 +36,7 @@ const App = () => {
       startDate: { value: null, matchMode: FilterMatchMode.DATE_IS },
       endDate: { value: null, matchMode: FilterMatchMode.DATE_IS },
       type: { value: null, matchMode: FilterMatchMode.EQUALS },
-      status: { value: null, matchMode: FilterMatchMode.EQUALS },
+      status: { value: null, matchMode: FilterMatchMode.EQUALS }
     });
   };
 
@@ -102,7 +102,7 @@ const App = () => {
           options.filterCallback(e.value, options.index);
         }}
         onInput={(e) => {
-          console.log("Calendar Input", e);
+          console.log('Calendar Input', e);
           options.filterCallback(e.value, options.index);
         }}
         dateFormat="mm/dd/yy"
@@ -134,12 +134,11 @@ const App = () => {
               responsiveLayout="scroll"
               header={Header(totalCount)}
               emptyMessage="No records found."
-              data-testid="data-table"
-            >
+              data-testid="data-table">
               <Column
                 field="memberDetails.name"
                 header="Member Name"
-                style={{ minWidth: "12rem" }}
+                style={{ minWidth: '12rem' }}
                 id="memberName"
               />
 
@@ -147,8 +146,8 @@ const App = () => {
                 header="Type"
                 filterField="type"
                 showFilterMatchModes={false}
-                filterMenuStyle={{ width: "8rem" }}
-                style={{ minWidth: "8rem" }}
+                filterMenuStyle={{ width: '8rem' }}
+                style={{ minWidth: '8rem' }}
                 body={selectBodyTemplate}
                 filter
                 filterElement={selectFilterTemplate}
@@ -158,8 +157,8 @@ const App = () => {
                 header="Status"
                 filterField="status"
                 showFilterMatchModes={false}
-                filterMenuStyle={{ width: "9rem" }}
-                style={{ minWidth: "9rem" }}
+                filterMenuStyle={{ width: '9rem' }}
+                style={{ minWidth: '9rem' }}
                 body={selectStatusTemplate}
                 filter
                 filterElement={selectStatusFilterTemplate}
@@ -169,7 +168,7 @@ const App = () => {
                 header="Start Date"
                 filterField="startDate"
                 dataType="date"
-                style={{ minWidth: "10rem" }}
+                style={{ minWidth: '10rem' }}
                 body={startDateBodyTemplate}
                 filter
                 filterElement={dateFilterTemplate}
@@ -179,23 +178,15 @@ const App = () => {
                 header="End Date"
                 filterField="endDate"
                 dataType="date"
-                style={{ minWidth: "10rem" }}
+                style={{ minWidth: '10rem' }}
                 body={endDateBodyTemplate}
                 filter
                 filterElement={dateFilterTemplate}
               />
 
-              <Column
-                field="memberNote"
-                header="Member Note"
-                style={{ minWidth: "16rem" }}
-              />
+              <Column field="memberNote" header="Member Note" style={{ minWidth: '16rem' }} />
 
-              <Column
-                field="admitterNote"
-                header="Admitter Note"
-                style={{ minWidth: "18rem" }}
-              />
+              <Column field="admitterNote" header="Admitter Note" style={{ minWidth: '18rem' }} />
             </DataTable>
           </div>
         </div>
