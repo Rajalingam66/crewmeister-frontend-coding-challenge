@@ -1,8 +1,6 @@
-import "primeicons/primeicons.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.css";
 import "primeflex/primeflex.css";
-import styled from 'styled-components'
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { absenceDetailsSelector } from "../redux/selectors";
 import React, { useState, useEffect } from "react";
@@ -11,22 +9,15 @@ import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Dropdown } from "primereact/dropdown";
 import { Calendar } from "primereact/calendar";
-import Header from '../components/Header';
-import { formatDate } from '../utils/helpers';
+import Header from "../components/Header";
+import { formatDate } from "../utils/helpers";
+import ErrorBoundary from "../components/ErrorBoundary";
+import GlobalHeader from "../components/GlobalHeader";
 import "./App.css";
-
-const GlobalHeader = styled.div`
-background: rgba(255,148,25,0.85);
-display: flex;
-height: 45px;
-color: #ffffff;
-padding: 10px;
-font-size: 22px;
-`; 
 
 const App = () => {
   const dispatch = useDispatch();
-  const {absenceDetails , totalCount } =  useSelector(
+  const { absenceDetails, totalCount } = useSelector(
     (state) => absenceDetailsSelector(state),
     shallowEqual
   );
@@ -71,9 +62,8 @@ const App = () => {
         value={options.value}
         options={types}
         onChange={(e) => {
-          console.log("Type Filter",e.value);
-          options.filterCallback(e.value, options.index)}
-        }
+          options.filterCallback(e.value, options.index);
+        }}
         itemTemplate={statusItemTemplate}
         className="p-column-filter"
         showClear
@@ -127,86 +117,89 @@ const App = () => {
   };
 
   return (
-    <div className="datatable" data-testid="app">
-      <GlobalHeader>Crewmeister</GlobalHeader>
-      <div className="card">
-      
-        <DataTable
-          value={absenceDetails}
-          paginator
-          className="p-datatable-absence"
-          rows={10}
-          dataKey="id"
-          filters={filters}
-          filterDisplay="menu"
-          loading={loading}
-          responsiveLayout="scroll"
-          header={Header(totalCount)}
-          emptyMessage="No records found."
-          data-testid="data-table"
-        >
-          <Column
-            field="memberDetails.name"
-            header="Member Name"
-            style={{ minWidth: "12rem" }}
-            id="memberName"
-          />
+    <div>
+      <ErrorBoundary>
+        <GlobalHeader />
+        <div className="datatable" data-testid="app">
+          <div className="card">
+            <DataTable
+              value={absenceDetails}
+              paginator
+              className="p-datatable-absence"
+              rows={10}
+              dataKey="id"
+              filters={filters}
+              filterDisplay="menu"
+              loading={loading}
+              responsiveLayout="scroll"
+              header={Header(totalCount)}
+              emptyMessage="No records found."
+              data-testid="data-table"
+            >
+              <Column
+                field="memberDetails.name"
+                header="Member Name"
+                style={{ minWidth: "12rem" }}
+                id="memberName"
+              />
 
-          <Column
-            header="Type"
-            filterField="type"
-            showFilterMatchModes={false}
-            filterMenuStyle={{ width: "8rem" }}
-            style={{ minWidth: "8rem" }}
-            body={selectBodyTemplate}
-            filter
-            filterElement={selectFilterTemplate}
-          />
-          
-          <Column
-            header="Status"
-            filterField="status"
-            showFilterMatchModes={false}
-            filterMenuStyle={{ width: "9rem" }}
-            style={{ minWidth: "9rem" }}
-            body={selectStatusTemplate}
-            filter
-            filterElement={selectStatusFilterTemplate}
-          />
+              <Column
+                header="Type"
+                filterField="type"
+                showFilterMatchModes={false}
+                filterMenuStyle={{ width: "8rem" }}
+                style={{ minWidth: "8rem" }}
+                body={selectBodyTemplate}
+                filter
+                filterElement={selectFilterTemplate}
+              />
 
-          <Column
-            header="Start Date"
-            filterField="startDate"
-            dataType="date"
-            style={{ minWidth: "10rem" }}
-            body={startDateBodyTemplate}
-            filter
-            filterElement={dateFilterTemplate}
-          />
+              <Column
+                header="Status"
+                filterField="status"
+                showFilterMatchModes={false}
+                filterMenuStyle={{ width: "9rem" }}
+                style={{ minWidth: "9rem" }}
+                body={selectStatusTemplate}
+                filter
+                filterElement={selectStatusFilterTemplate}
+              />
 
-          <Column
-            header="End Date"
-            filterField="endDate"
-            dataType="date"
-            style={{ minWidth: "10rem" }}
-            body={endDateBodyTemplate}
-            filter
-            filterElement={dateFilterTemplate}
-          />
+              <Column
+                header="Start Date"
+                filterField="startDate"
+                dataType="date"
+                style={{ minWidth: "10rem" }}
+                body={startDateBodyTemplate}
+                filter
+                filterElement={dateFilterTemplate}
+              />
 
-          <Column
-            field="memberNote"
-            header="Member Note"
-            style={{ minWidth: "16rem" }}
-          />
+              <Column
+                header="End Date"
+                filterField="endDate"
+                dataType="date"
+                style={{ minWidth: "10rem" }}
+                body={endDateBodyTemplate}
+                filter
+                filterElement={dateFilterTemplate}
+              />
 
-          <Column
-            field="admitterNote"
-            header="Admitter Note"
-            style={{ minWidth: "18rem" }}
-          />
-        </DataTable>
-      </div>
+              <Column
+                field="memberNote"
+                header="Member Note"
+                style={{ minWidth: "16rem" }}
+              />
+
+              <Column
+                field="admitterNote"
+                header="Admitter Note"
+                style={{ minWidth: "18rem" }}
+              />
+            </DataTable>
+          </div>
+        </div>
+      </ErrorBoundary>
     </div>
   );
 };
