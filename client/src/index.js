@@ -1,18 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./app/App";
-import reportWebVitals from "./reportWebVitals";
-import { absenceReducer } from "./redux/reducer.js";
-import AbsenceSaga from "./redux/sagas";
-import configureStore from "./app/store";
-import { Provider } from "react-redux";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './app/App';
+import reportWebVitals from './reportWebVitals';
+import { absenceReducer } from './redux/reducer.js';
+import AbsenceSaga from './redux/sagas';
+import configureStore from './app/store';
+import { Provider } from 'react-redux';
 
 const options = {
   reducers: {
-    absence: absenceReducer,
+    absence: absenceReducer
   },
-  sagasActionWatcher: AbsenceSaga,
+  sagasActionWatcher: AbsenceSaga
 };
 
 ReactDOM.render(
@@ -21,7 +21,7 @@ ReactDOM.render(
       <App />
     </Provider>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
